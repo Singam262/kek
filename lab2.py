@@ -4,6 +4,7 @@ def menu():
     print(" 1.Первое задание")
     print(" 2.Второе задание")
     print(" 3.Третье задание")
+    print(" 4.Четвертое задание")
     return int(input("Выберите пункт: "))
 def task_1():
     print("Предлагает ввести строку. "
@@ -40,19 +41,22 @@ def task_3():
           "Результат должен быть напечатан в два столбца шириной 10 символов с выравниванием по правому краю. "
           "Перед значением температуры в шкале Цельсия должен выводиться знак, "
           "как для отрицательных значений, так и для положительных.")
-    t = input()
-
-    sign = t[-1]  # извлекается последний знак строки
-
-    # строка за исключением последнего знака переводится в целое число
-    t = int(t[0:-1])
-
-    if sign == 'C' or sign == 'c':  # Если знак обозначает Цельсии,
-        f = round(t * (9/5) + 32)  # перевод в Фаренгейты, округление до целого
-        print(str(f) + 'F')
-    elif sign == 'F' or sign == 'f':  # Если знак обозначает Фаренгейты
-        celcius = round(5.0 / 9.0 * (t - 32))  # перевод в Цельсии и округление до целого
-        print(str(celcius) + 'C')
+    print("farenheit        celasius")
+    for i in range(20,41):
+        celsius=5.0/9.0*(i-32)
+        print(i,"                   ","%.2f"% celsius)
+def task_4():
+line=input("Stroku")
+counter=0
+mostcommon=0
+for letter in line:
+  if letter == 'a':
+    counter+=1
+  else:
+      if mostcommon<counter:
+         mostcommon=counter
+      counter=0;
+print(mostcommon)
 while True:
         access = menu()
         if access == 1:
